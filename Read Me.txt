@@ -1,0 +1,123 @@
+Asteroids-The Game!!! Basic Help and Set-Up Guide
+
+Hey There! If you're reading this, then Mason finally gave you a copy of Asteroids-The Game!!!. 
+Unfortunately, because of some computer logic, not all of the files are able to be saved in a single jar file,
+which is why I (the narrator) am here! I am here for some FAQs, quick setup help, and puns.
+
+"But Narrator," I hear you ask, "Why does the game need a folder? Can't you have just one file do all? Also, didn't Mason
+write you?" Why yes, in a perfect world. But that's where the doo-doo is found. Mason implemented magic so that your scores
+and settings are saved. That way, you don't have to remember to mute your game and get ousted by your teacher who you 
+should be paying attention to instead of playing Asteroids-The Game!!!. 
+The way it does this is with 2 functions: Reading and Writing. 
+ - Reading: This is when the computer reads a file to know what to do.
+ - Writing: This is when the computer records in a file what to remember later
+Unfortunately, a jar file can only be read from, not written to. Like a class copy. That means that Mason couldn't save 
+the game in the jar file, leading to ME:) 
+The game can save to system files, but it needs a place to put its notes, metaphorically speaking. I'm here to tell you
+how to do that in a few simple steps.
+
+HOW TO DO THAT:
+ 1. Put the Asteroids-The Game!!! jar (and me?) in a folder. 
+ 2. Go into the folder.
+ 3. Right click a blank space in the folder.
+ 4. Move your mouse over 'New'
+ 5. Select Folder
+ 6. Name the folder "resources"
+ 7. Celebrate.
+So long as you have a "resoures" folder in the same place as Asteroids-The Game!!!, you can read and save your data.
+Playing the game is even easier.
+
+HOW TO PLAY:
+ 1. Double click Asteroids-The Game!!!
+
+If that doesn't work, panic.
+
+FAQs:
+ - Q: How do I Play?
+ - A: Use the arrow keys to get to CONTROLS and begin reading.
+
+ - Q: Why did you make this game?
+ - A: I wanted to bring joy to the world, and an opportunity for extra credit ;)
+
+ - Q: If I get enough points to get an extra life, 
+      but the score displayed isn't caught up, and I die, 
+      do I not get my extra life?
+ - A: You will. If not, let me know and I'll fix it for later.
+
+ - Q: How can I give feedback, bug errors, and advice?
+ - A: Send me an email with the subject as "Asteroids - "+bug help, or feedback or whatever. 
+      If it is a bug, try to take a photo of the bug, 
+      possibly use command prompt to get the error text, and tell me what lead you to get the bug.
+      If it is feedback or advice, give a quick synopsis at the top and a quick explanation.
+      If it is advice, I would prefer a reasonably thorough explanation.
+      In any case, I'll try to respond to all of them.
+
+ - Q: How can I help support you?
+ - A: Give me $$$ ;)
+
+ - Q: How can I share this game?
+ - A: If you have the original zip, send that. If not, make a backup of your scores and settings, move them outside of the
+      resources folder, create a zipped copy of the game, and send that. 
+      Then have the person give you a dollar and then give that dollar to me.
+
+ - Q: Do you want money?
+ - A: Yes
+
+ - Q: I find the particles distracting. How can I turn them off?
+ - A: You cant. >:) -(Bwah Hah Hah!!!)
+
+ - Q: Aren't you Mason?
+ - A: ...No?
+
+Finally, the part you've all been waiting for:
+
+PUNS:
+ - Did you hear about the guy who got hit in the head with a can of soda? He's lucky it was a soft drink.
+ - Police were called to a daycare where the kids were resisting a rest.
+ - A man once assaulted me with milk, cream, and butter. How dairy of him.
+ - My friend's bakery burned down last week. Now his buisness is toast.
+ - I couldn't remember how to throw a boomerang, then it came back to me.
+ - I'm glad I know sign language. It's pretty handy.
+ - You ever try to eat a clock? Don't. It's really time consuming.
+ - Back when William joined the army, he didn't like it when they said "Fire at Will!"
+ - I used to have a fear of hurdles, but then I got over it.
+ - Did you hear about the guy who invented the door knocker? He won the nobel prize.
+ - I always trust a glue salesman, they always stick to their word.
+ - The first time I rode an elevator it was really uplifting, but then it let me down.
+ - Don't trust people who do acupunctures, they're back stabbers.
+ - Did you know novice pirates are bad singers? They can never hit the high Cs.
+ - I once heard a funny joke about amnesia. Too bad I forgot how it goes.
+ - Sleep comes naturally to me. I can do it with my eyes closed.
+ - I heard of a crime that happened in a parking garage. It was wrong on so many levels.
+ - I once struggled with how lightning worked, then it struck me.
+ - Did you hear about those new reversable jackets? I can't wait to see how they turn out.
+ - I tried wearing tight jeans once, but I can never pull it off.
+ - I'd tell you a joke about infinity, but it doesn't have an ending.
+ - The conversation between the brain surgeon and the anathestheiologist was mind numbing.
+ - If you killed dubstep woudld that make it a deadbeat?
+ - I saw a tree creating energy once, must have been a power plant.
+ - If a dog was computer literate, would his bark be worse than his byte?
+ - My favorate rapped is the Easter Bunny. He really knows how to hip-hop.
+ - I knew of a crime that involved lampshades, but the police could never shed the light on who was the thief.
+ - I saw a sign on a music store. It said "Bach in a minute."
+ - A lawyer once sued a coffin maker. It was an open and shut case.
+ - I once heard of a story of the most quietest burglars. They were known for being criminal master-mimes.
+ - The chemistry teacher couldn't handle the situation. He needed to find hin element.
+ - I never took an elevator to the basement floor before, that's just beneath me.
+ - I wouldn't reccomend going to a party full of shy people, they're always abash-ful group.
+ - When it comes to armchairs, I have a deep seated fear.
+ - How does a card player party? That's easy, they shuffle.
+ - The railway had a safety problem, but it tried to cover its tracks.
+ - Grave diggers never die, they jsut get buried in their work.
+ - Why do ghosts ride elevators? To lift their spirits.
+ - Did you hear about the car with a wooden engine, axel, and wheels? It wooden work.
+ - I once saw a cow with 3 legs. I called it lean beef.
+ - Then I saw a cow with no legs. I called it ground beef.
+ - What does Joe Biden when waiting for something? He starts biden his time.
+ - Speaker Pelosi disagreed with Trump's border proposals. She found then o-fence-ive.
+ - When the Wright brothers invented the airplane, their buisness took off.
+ - Did you hear about the ocelot that tried to jump over the barbed wire fence? It was a catastrophe.
+
+That's all. 
+If you have anymore questions, send me an email at mason.borenstein14@k12.leanderisd.com 
+with the approporiate subject headers. Enjoy the game!
