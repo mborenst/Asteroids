@@ -47,7 +47,7 @@ public class Space extends JPanel {
     public int lives;
     public ArrayList<Asteroid> rubble;
     public ArrayList<Laser> lasers;
-    public ArrayList<Alien> mexico;
+    public ArrayList<Alien> aliens;
     public ArrayList<Particle> vacuum;
     public long score;
     public long displayScore;
@@ -212,7 +212,7 @@ public class Space extends JPanel {
         level = 1;
         lasers = new ArrayList<>();
         rubble = new ArrayList<>();
-        mexico = new ArrayList<>();
+        aliens = new ArrayList<>();
         vacuum = new ArrayList<>();
         playerRotate = 0;
         thrust = false;
@@ -1475,7 +1475,7 @@ public class Space extends JPanel {
                 hyperSpaceOn = true;
             }
         }
-        if ((mexico.isEmpty() || gameOver) && timerChange) {
+        if ((aliens.isEmpty() || gameOver) && timerChange) {
             timer.cancel();
             timer = new Timer();
             timer.scheduleAtFixedRate(new ScheduleTask(),
@@ -1537,7 +1537,7 @@ public class Space extends JPanel {
                 && !highScoreInput && !highScoreDisplay) {
             print("Cycle " + cycleCount + " Begin :: ", true, false);
             moveShip();
-            if (!displayNextLevel && mexico.isEmpty()) {
+            if (!displayNextLevel && aliens.isEmpty()) {
                 alienTimer += 0.0166;
             }
             if (alienTimer > alienTime) {
@@ -1545,9 +1545,9 @@ public class Space extends JPanel {
                 alienTime = (float) (10 + (Math.random() * 20));
                 int t = (int) Math.round(Math.random() * 2);
                 if ((t == 0 || t == 1) && score < 40000) {
-                    mexico.add(new Alien());
+                    aliens.add(new Alien());
                 } else {
-                    mexico.add(new Alien_Small());
+                    aliens.add(new Alien_Small());
                 }
                 alienSoundTime = 0;
             }
@@ -1574,8 +1574,8 @@ public class Space extends JPanel {
                     i--;
                 }
             }
-            for (int i = 0; i < mexico.size(); i++) {
-                Alien a = mexico.get(i);
+            for (int i = 0; i < aliens.size(); i++) {
+                Alien a = aliens.get(i);
                 if (a != null) {
                     print(a.toString(), false, false);
                 }
@@ -1588,9 +1588,9 @@ public class Space extends JPanel {
             print("Cycle " + cycleCount + " End ", false, true);
             cycleCount++;
         }
-        if (isStarted && !mexico.isEmpty() && !gameOver) {
+        if (isStarted && !aliens.isEmpty() && !gameOver) {
             double[] a;
-            if (mexico.get(0) instanceof Alien_Small) {
+            if (aliens.get(0) instanceof Alien_Small) {
                 a = tone(900 + (100 * Math.cos((alienSoundTime
                         - Math.PI) / 2)), 0.01666666666);
             } else {
@@ -1785,8 +1785,8 @@ public class Space extends JPanel {
                     }
                 }
             }
-            for (int ii = 0; ii < mexico.size(); ii++) {
-                Alien a = mexico.get(ii);
+            for (int ii = 0; ii < aliens.size(); ii++) {
+                Alien a = aliens.get(ii);
                 for (double i = x - 25; i < x + 25; i++) {
                     for (double j = y - 25; j < y + 25; j++) {
                         if (a.isTouching(new SpaceShip(i, j))
@@ -1806,8 +1806,8 @@ public class Space extends JPanel {
                 player.setYSpeed(0);
                 player.setState(1);
                 player.setTimeOfDeath(0);
-                if (!mexico.isEmpty()) {
-                    mexico.get(0).setFire(0);
+                if (!aliens.isEmpty()) {
+                    aliens.get(0).setFire(0);
                 }
                 createParticles(player);
                 hyperSpaceOn = false;
@@ -1864,8 +1864,8 @@ public class Space extends JPanel {
             }
         } else if (player.getState() == 4) {
             boolean allClear = true;
-            if (!mexico.isEmpty()) {
-                mexico.get(0).setFire(0);
+            if (!aliens.isEmpty()) {
+                aliens.get(0).setFire(0);
             }
             if (player.getTimeOfDeath() > cycleCount - (15 * 60)) {
                 for (Asteroid a : rubble) {
@@ -1898,7 +1898,7 @@ public class Space extends JPanel {
                     }
                 }
                 if (allClear) {
-                    for (Alien a : mexico) {
+                    for (Alien a : aliens) {
                         if (a.getX() > (BOARD_WIDTH / 2) - 50
                                 && a.getX() < (BOARD_WIDTH / 2) + 50
                                 && a.getY() > (BOARD_HEIGHT / 2) - 50
@@ -1919,7 +1919,7 @@ public class Space extends JPanel {
                     }
                 }
                 if (allClear) {
-                    for (Alien a : mexico) {
+                    for (Alien a : aliens) {
                         if (a.getX() > (BOARD_WIDTH / 2) - 25
                                 && a.getX() < (BOARD_WIDTH / 2) + 25
                                 && a.getY() > (BOARD_HEIGHT / 2) - 25
@@ -1965,7 +1965,7 @@ public class Space extends JPanel {
     }
 
     public void moveAsteroids() {
-        if (rubble.size() > 0 || mexico.size() > 0) {
+        if (rubble.size() > 0 || aliens.size() > 0) {
             if (!rubble.isEmpty() && rubble.size() > 0) {
                 for (Asteroid a : rubble) {
                     if (a != null) {
@@ -2024,8 +2024,8 @@ public class Space extends JPanel {
     }
 
     public void moveAliens() {
-        for (int i = 0; i < mexico.size(); i++) {
-            Alien a = mexico.get(i);
+        for (int i = 0; i < aliens.size(); i++) {
+            Alien a = aliens.get(i);
             if (a instanceof Alien_Small) {
                 Alien_Small aa = (Alien_Small) a;
                 double decide = aa.shoot(player);
@@ -2038,7 +2038,7 @@ public class Space extends JPanel {
                 aa.decideDirection();
                 boolean die = aa.move();
                 if (die) {
-                    mexico.remove(aa);
+                    aliens.remove(aa);
                 }
             } else {
                 double decide = a.shoot(player);
@@ -2051,7 +2051,7 @@ public class Space extends JPanel {
                 a.decideDirection();
                 boolean die = a.move();
                 if (die) {
-                    mexico.remove(a);
+                    aliens.remove(a);
                 }
             }
         }
@@ -2088,7 +2088,7 @@ public class Space extends JPanel {
                         rubble.remove(a);
                         double numerator = ((maxDelay - minDelay)
                                 * rubble.size());
-                        if (!mexico.isEmpty()) {
+                        if (!aliens.isEmpty()) {
                             for (int iii = 0; i < 3; i++) {
                                 if (numerator <= 0) {
                                     while (numerator <= 0) {
@@ -2130,8 +2130,8 @@ public class Space extends JPanel {
                 }
             }
             if (rubble.contains(a)) {
-                for (int j = 0; j < mexico.size(); j++) {
-                    Alien al = mexico.get(j);
+                for (int j = 0; j < aliens.size(); j++) {
+                    Alien al = aliens.get(j);
                     if (a != null && al != null) {
                         if (a.isTouching(al) || al.isTouching(a)) {
                             rubble.remove(a);
@@ -2142,7 +2142,7 @@ public class Space extends JPanel {
                                 currentDelay = minDelay;
                             }
                             SoundEffect.ALIEN_DIE.play();
-                            mexico.remove(al);
+                            aliens.remove(al);
                             createParticles(al);
                             if (a instanceof Meteor && !(a instanceof Meteorite)) {
                                 SoundEffect.METEOR_DIE.play();
@@ -2169,8 +2169,8 @@ public class Space extends JPanel {
         }
 
         // Test Alien Laser Collisions
-        for (int i = 0; i < mexico.size(); i++) {
-            Alien a = mexico.get(i);
+        for (int i = 0; i < aliens.size(); i++) {
+            Alien a = aliens.get(i);
             for (int j = 0; j < lasers.size(); j++) {
                 Laser l = lasers.get(j);
                 if (l instanceof Alien_Laser) {
@@ -2180,7 +2180,7 @@ public class Space extends JPanel {
                             && !(l instanceof Alien_Laser)) {
                         addScore(a.getScore());
                         lasers.remove(l);
-                        mexico.remove(a);
+                        aliens.remove(a);
                         createParticles(a);
                         if (i > 0) {
                             i--;
@@ -2215,10 +2215,10 @@ public class Space extends JPanel {
             }
         }
         if (player.getState() == 1) {
-            for (int i = 0; i < mexico.size(); i++) {
-                Alien a = mexico.get(i);
+            for (int i = 0; i < aliens.size(); i++) {
+                Alien a = aliens.get(i);
                 if (player.isTouching(a) || a.isTouching(player)) {
-                    mexico.remove(a);
+                    aliens.remove(a);
                     createParticles(a);
                     die();
                     break;
@@ -2833,8 +2833,8 @@ public class Space extends JPanel {
         // Draw Alien(s)
         if (!isStarted || (isStarted && !isPaused)
                 || (isPaused && !showControls)) {
-            for (int i = 0; i < mexico.size(); i++) {
-                Alien a = mexico.get(i);
+            for (int i = 0; i < aliens.size(); i++) {
+                Alien a = aliens.get(i);
                 if (lineColor.getRGB() == Color.PINK.getRGB()) {
                     g.setColor(Color.PINK);
                 }

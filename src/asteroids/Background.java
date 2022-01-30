@@ -40,7 +40,7 @@ public class Background {
                 }
             }
             boolean touchingAlien = false;
-            for (Alien a: space.mexico) {
+            for (Alien a: space.aliens) {
                 if (a.isTouching(star)) {
                     touchingAlien = true;
                 }
